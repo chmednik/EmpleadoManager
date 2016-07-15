@@ -1,0 +1,6 @@
+languaje: java
+jdk:
+  - oraclejdk8
+notifications:
+  email:
+  - chmednik@gmail.com
