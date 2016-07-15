@@ -1,6 +1,8 @@
 
 package com.mycompany.empleadomanager.modelo;
 
+import java.util.Objects;
+
 public class Empleado {
     
     private String nombre;
@@ -12,6 +14,33 @@ public class Empleado {
     public Empleado(){
     
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 79 * hash + Objects.hashCode(this.dni);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Empleado other = (Empleado) obj;
+        if (!Objects.equals(this.dni, other.dni)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
 
     public void setNombre(String nombre) {
         this.nombre = nombre;

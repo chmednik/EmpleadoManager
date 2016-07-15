@@ -18,11 +18,12 @@ public class DBInMemory {
     
         lastID = lastID + 1L;
         datos.put(lastID, empleado);
+        empleado.setId(lastID);
     }
 
     public Empleado buscarEmpleado(Long id) {
-        return null; 
+            return datos.get(id);
     }
     
-    
+    //Hacer remover y modificar
 }
