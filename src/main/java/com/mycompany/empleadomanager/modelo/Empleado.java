@@ -1,12 +1,13 @@
 
 package com.mycompany.empleadomanager.modelo;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class Empleado {
     
     private String nombre;
-    private Integer edad;
+    private LocalDate fechaNacimiento;
     private double sueldo;
     private Long id;
     private String dni;
@@ -46,8 +47,8 @@ public class Empleado {
         this.nombre = nombre;
     }
 
-    public void setEdad(Integer edad) {
-        this.edad = edad;
+    public void setFechaNacimiento(LocalDate fechaNac) {
+        this.fechaNacimiento = fechaNac;
     }
 
     public void setSueldo(double sueldo) {
@@ -68,8 +69,8 @@ public class Empleado {
         return nombre;
     }
 
-    public Integer getEdad() {
-        return edad;
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
     public double getSueldo() {

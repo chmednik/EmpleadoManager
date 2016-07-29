@@ -5,11 +5,12 @@ import com.mycompany.empleadomanager.modelo.Empleado;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DBInMemory {
+public class DBInMemory implements DAO{
 
     private Long lastID = 0L;
-    private Map<Long,Empleado> datos = new HashMap<>();
+    private static Map<Long,Empleado> datos = new HashMap<>();
     
+    @Override
     public void almacenar(Empleado empleado){ 
     
         //Validaciones
@@ -21,6 +22,7 @@ public class DBInMemory {
         empleado.setId(lastID);
     }
 
+    @Override
     public Empleado buscarEmpleado(Long id) {
             return datos.get(id);
     }
